@@ -185,6 +185,45 @@
       margin-bottom: 1rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
+
+    /* Enhanced Resume Section */
+    .resume-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      max-width: 800px;
+      width: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .resume-container:hover {
+      transform: translateY(-5px);
+    }
+
+    .resume-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .resume-link:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+
+    .resume-highlight {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
   </style>
 </head>
 <body>
@@ -218,8 +257,11 @@
   </section>
 
   <section id="resume">
-    <h2>Resume</h2>
-    <p>Download my full resume <a href="resume.pdf" target="_blank">here</a>. It includes my artistic background, education, skills, and experience.</p>
+    <div class="resume-container">
+      <h2>Resume</h2>
+      <p class="resume-highlight">Explore my creative journey, skills, education, and professional experiences that have shaped my career in the arts.</p>
+      <a href="resume.pdf" target="_blank" class="resume-link">Download Resume</a>
+    </div>
   </section>
 
   <section id="contact">
