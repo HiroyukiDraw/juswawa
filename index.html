@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HIROYUKI DRAW</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
   <style>
+    /* (same CSS as before) */
     * {
       margin: 0;
       padding: 0;
@@ -31,14 +32,8 @@
     }
 
     @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     nav h1 {
@@ -77,27 +72,13 @@
       animation: fadeInUp 1s ease forwards;
     }
 
-    section:nth-of-type(2) {
-      animation-delay: 0.5s;
-    }
-
-    section:nth-of-type(3) {
-      animation-delay: 1s;
-    }
-
-    section:nth-of-type(4) {
-      animation-delay: 1.5s;
-    }
-
-    section:nth-of-type(5) {
-      animation-delay: 2s;
-    }
+    section:nth-of-type(2) { animation-delay: 0.5s; }
+    section:nth-of-type(3) { animation-delay: 1s; }
+    section:nth-of-type(4) { animation-delay: 1.5s; }
+    section:nth-of-type(5) { animation-delay: 2s; }
 
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     #home {
@@ -207,27 +188,13 @@
       animation: wavePulse 2s infinite ease-in-out;
     }
 
-    .wave-ring:nth-child(1) {
-      animation-delay: 0s;
-    }
-
-    .wave-ring:nth-child(2) {
-      animation-delay: 0.5s;
-    }
-
-    .wave-ring:nth-child(3) {
-      animation-delay: 1s;
-    }
+    .wave-ring:nth-child(1) { animation-delay: 0s; }
+    .wave-ring:nth-child(2) { animation-delay: 0.5s; }
+    .wave-ring:nth-child(3) { animation-delay: 1s; }
 
     @keyframes wavePulse {
-      0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.6;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1.8);
-        opacity: 0;
-      }
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+      100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
     }
 
     .resume-container {
@@ -283,39 +250,40 @@
   <section id="home"></section>
 
   <section id="about">
-    <h2>About Me</h2> <br><br>
+    <h2>About Me</h2><br><br>
     <div class="wave-container">
       <div class="wave-ring"></div>
       <div class="wave-ring"></div>
       <div class="wave-ring"></div>
       <img src="smile.jpg" alt="Profile Picture" class="profile-image">
-    </div
-      ><br><br>
+    </div><br><br>
     <p>I'm Hiroyuki, a passionate artist who brings imagination to life through sketches, digital illustrations, and unique concepts. Art is my voice, and every stroke tells a story.</p>
   </section>
 
- <section id="works">
-  <h2>My Works</h2>
+  <section id="works">
+    <h2>My Works</h2>
 
-  <!-- Categories -->
-  <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-    <button style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background-color: #333; color: white; cursor: pointer;">All Works</button>
-    <button style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background-color: #333; color: white; cursor: pointer;">Sketches</button>
-    <button style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background-color: #333; color: white; cursor: pointer;">Digital Art</button>
-    <button style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background-color: #333; color: white; cursor: pointer;">Traditional Arts</button>
-    <button style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background-color: #333; color: white; cursor: pointer;">Graphic Design</button>
-    <button style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background-color: #333; color: white; cursor: pointer;">Short Film</button>
-    <button style="padding: 0.5rem 1rem; border: none; border-radius: 20px; background-color: #333; color: white; cursor: pointer;">Music Videos</button>
-  </div>
+    <!-- Categories -->
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;" id="category-buttons">
+      <button data-filter="all">All Works</button>
+      <button data-filter="sketch">Sketches</button>
+      <button data-filter="digital">Digital Art</button>
+      <button data-filter="traditional">Traditional Arts</button>
+      <button data-filter="graphic">Graphic Design</button>
+      <button data-filter="film">Short Film</button>
+      <button data-filter="music">Music Videos</button>
+    </div>
 
-  <!-- Gallery -->
-  <div class="work-gallery">
-    <img src="https://source.unsplash.com/200x150/?illustration" alt="Artwork 1">
-    <img src="https://source.unsplash.com/201x150/?drawing" alt="Artwork 2">
-    <img src="https://source.unsplash.com/202x150/?painting" alt="Artwork 3">
-    <img src="https://source.unsplash.com/203x150/?anime" alt="Artwork 4">
-  </div>
-</section>
+    <!-- Gallery -->
+    <div class="work-gallery" id="work-gallery">
+      <img src="https://source.unsplash.com/200x150/?illustration" alt="Artwork 1" data-category="digital">
+      <img src="https://source.unsplash.com/201x150/?drawing" alt="Artwork 2" data-category="sketch">
+      <img src="https://source.unsplash.com/202x150/?painting" alt="Artwork 3" data-category="traditional">
+      <img src="https://source.unsplash.com/203x150/?anime" alt="Artwork 4" data-category="graphic">
+      <img src="https://source.unsplash.com/204x150/?cinema" alt="Artwork 5" data-category="film">
+      <img src="https://source.unsplash.com/205x150/?music" alt="Artwork 6" data-category="music">
+    </div>
+  </section>
 
   <section id="resume">
     <div class="resume-container">
@@ -328,11 +296,31 @@
   <section id="contact">
     <h2>Contact Me</h2>
     <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
       <textarea rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
   </section>
+
+  <!-- JavaScript for category filtering -->
+  <script>
+    const buttons = document.querySelectorAll('#category-buttons button');
+    const images = document.querySelectorAll('#work-gallery img');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        images.forEach(img => {
+          const category = img.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            img.style.display = 'block';
+          } else {
+            img.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
