@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HIROYUKI DRAW</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
   <style>
     * {
       margin: 0;
@@ -17,31 +16,29 @@
     body, html {
       height: 100%;
       scroll-behavior: smooth;
-      background: #f2f2f2;
     }
 
     nav {
       position: fixed;
       width: 100%;
-      background: linear-gradient(to right, #111, #333);
+      background: rgba(0, 0, 0, 0.7);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      animation: slideInDown 1s ease forwards;
+      animation: fadeInDown 1s ease forwards;
     }
 
-    @keyframes slideInDown {
-      from { opacity: 0; transform: translateY(-30px); }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     nav h1 {
-      color: #ffcc00;
-      font-size: 2rem;
-      font-family: 'Orbitron', sans-serif;
+      color: white;
+      font-size: 1.8rem;
+      font-family: 'Orbitron';
     }
 
     nav ul {
@@ -54,17 +51,16 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease, transform 0.2s;
+      transition: color 0.3s ease;
     }
 
     nav ul li a:hover {
       color: #ffcc00;
-      transform: scale(1.1);
     }
 
     section {
       min-height: 100vh;
-      padding: 5rem 2rem;
+      padding: 4rem 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -79,6 +75,7 @@
     section:nth-of-type(3) { animation-delay: 1s; }
     section:nth-of-type(4) { animation-delay: 1.5s; }
     section:nth-of-type(5) { animation-delay: 2s; }
+    section:nth-of-type(6) { animation-delay: 2.5s; }
 
     @keyframes fadeInUp {
       to { opacity: 1; transform: translateY(0); }
@@ -87,92 +84,93 @@
     #home {
       background: url('COF.jpg') no-repeat center center/cover;
       color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
 
-    #about, #works, #resume, #contact {
-      background: #fff;
+    #about, #works, #works-alt, #resume, #contact {
+      background: #f8f9fa;
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: #222;
+      color: #333;
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       max-width: 700px;
       color: #555;
-      line-height: 1.6;
     }
 
     .work-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1rem;
       margin-top: 2rem;
     }
 
     .work-gallery img {
-      width: 220px;
-      height: 160px;
+      width: 200px;
+      height: 150px;
       object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
     }
 
     .work-gallery img:hover {
-      transform: scale(1.07);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transform: scale(1.05);
     }
 
     form {
-      background: #fff;
+      background: white;
       padding: 2rem;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       max-width: 500px;
       width: 100%;
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
+      margin-top: 2rem;
     }
 
     input, textarea {
       width: 100%;
       padding: 1rem;
-      border: 2px solid #ddd;
+      border: 2px solid #e0e0e0;
       border-radius: 12px;
-      background: #f9f9f9;
-      transition: 0.3s;
+      background-color: #f9f9f9;
+      transition: border-color 0.3s, background-color 0.3s;
+      font-size: 1rem;
     }
 
     input:focus, textarea:focus {
-      border-color: #000;
+      border-color: #333;
       background-color: #fff;
       outline: none;
     }
 
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
     button {
       padding: 1rem;
-      background: #000;
-      color: #fff;
+      background-color: #333;
+      color: white;
       border: none;
       border-radius: 12px;
+      font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.3s;
+      transition: background-color 0.3s, transform 0.2s;
     }
 
     button:hover {
-      background: #444;
+      background-color: #555;
       transform: scale(1.05);
     }
 
@@ -216,7 +214,7 @@
     }
 
     .resume-container {
-      background: #fff;
+      background: white;
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -233,33 +231,34 @@
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.8rem 1.5rem;
-      background: #000;
-      color: #fff;
+      background-color: #333;
+      color: white;
       text-decoration: none;
       border-radius: 10px;
       font-weight: bold;
-      transition: 0.3s;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .resume-link:hover {
-      background: #444;
+      background-color: #555;
       transform: scale(1.05);
     }
 
     .resume-highlight {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #444;
       line-height: 1.6;
     }
   </style>
 </head>
 <body>
-    <nav>
+  <nav>
     <h1>HIROYUKI DRAW</h1>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Me</a></li>
       <li><a href="#works">Works</a></li>
+      <li><a href="#works-alt">More Works</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -268,19 +267,18 @@
   <section id="home"></section>
 
   <section id="about">
-    <h2>About Me</h2><br><br>
+    <h2>About Me</h2>
     <div class="wave-container">
       <div class="wave-ring"></div>
       <div class="wave-ring"></div>
       <div class="wave-ring"></div>
       <img src="smile.jpg" alt="Profile Picture" class="profile-image">
-    </div><br><br>
+    </div>
     <p>I'm Hiroyuki, a passionate artist who brings imagination to life through sketches, digital illustrations, and unique concepts. Art is my voice, and every stroke tells a story.</p>
   </section>
 
   <section id="works">
     <h2>My Works</h2>
-
     <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;" id="category-buttons">
       <button data-filter="all">All Works</button>
       <button data-filter="sketch">Sketches</button>
@@ -290,7 +288,6 @@
       <button data-filter="film">Short Film</button>
       <button data-filter="music">Music Videos</button>
     </div>
-
     <div class="work-gallery" id="work-gallery">
       <img src="https://source.unsplash.com/200x150/?illustration" alt="Artwork 1" data-category="digital">
       <img src="https://source.unsplash.com/201x150/?drawing" alt="Artwork 2" data-category="sketch">
@@ -298,6 +295,17 @@
       <img src="https://source.unsplash.com/203x150/?anime" alt="Artwork 4" data-category="graphic">
       <img src="https://source.unsplash.com/204x150/?cinema" alt="Artwork 5" data-category="film">
       <img src="https://source.unsplash.com/205x150/?music" alt="Artwork 6" data-category="music">
+    </div>
+  </section>
+
+  <section id="works-alt">
+    <h2>More Works</h2>
+    <div class="work-gallery">
+      <img src="https://source.unsplash.com/210x150/?art" alt="More Work 1">
+      <img src="https://source.unsplash.com/211x150/?design" alt="More Work 2">
+      <img src="https://source.unsplash.com/212x150/?sketchbook" alt="More Work 3">
+      <img src="https://source.unsplash.com/213x150/?motion" alt="More Work 4">
+      <img src="https://source.unsplash.com/214x150/?graphics" alt="More Work 5">
     </div>
   </section>
 
