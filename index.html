@@ -6,7 +6,7 @@
   <title>HIROYUKI DRAW</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
   <style>
-    /* (same CSS as before) */
+    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -123,34 +123,51 @@
       transform: scale(1.05);
     }
 
+    /* Updated Form Design */
     form {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      max-width: 500px;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      width: 300px;
+      gap: 1.2rem;
       margin-top: 2rem;
     }
 
     input, textarea {
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      transition: border-color 0.3s ease;
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      background-color: #f9f9f9;
+      transition: border-color 0.3s, background-color 0.3s;
+      font-size: 1rem;
     }
 
     input:focus, textarea:focus {
       border-color: #333;
+      background-color: #fff;
       outline: none;
     }
 
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
     button {
-      padding: 0.8rem;
+      padding: 1rem;
       background-color: #333;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: background-color 0.3s, transform 0.2s;
     }
 
     button:hover {
@@ -263,7 +280,6 @@
   <section id="works">
     <h2>My Works</h2>
 
-    <!-- Categories -->
     <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;" id="category-buttons">
       <button data-filter="all">All Works</button>
       <button data-filter="sketch">Sketches</button>
@@ -274,7 +290,6 @@
       <button data-filter="music">Music Videos</button>
     </div>
 
-    <!-- Gallery -->
     <div class="work-gallery" id="work-gallery">
       <img src="https://source.unsplash.com/200x150/?illustration" alt="Artwork 1" data-category="digital">
       <img src="https://source.unsplash.com/201x150/?drawing" alt="Artwork 2" data-category="sketch">
@@ -295,28 +310,14 @@
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <div class="container">
-  <h1>FormSubmit Demo</h1>
-  <form target="_blank" action="https://formsubmit.co/shinxbasya@gmail.com" method="POST">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col">
-          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-        </div>
-        <div class="col">
-          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-  </form>
-</div>
+    <form target="_blank" action="https://formsubmit.co/shinxbasya@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <textarea name="message" placeholder="Your Message" rows="10" required></textarea>
+      <button type="submit">Submit Form</button>
+    </form>
   </section>
 
-  <!-- JavaScript for category filtering -->
   <script>
     const buttons = document.querySelectorAll('#category-buttons button');
     const images = document.querySelectorAll('#work-gallery img');
