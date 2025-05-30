@@ -268,7 +268,7 @@
   <section id="home"></section>
 
   <section id="about">
-    <h2>About Me</h2><br><br>
+ <h2>About Me</h2><br><br>
     <div class="wave-container">
       <div class="wave-ring"></div>
       <div class="wave-ring"></div>
@@ -280,18 +280,20 @@
 
   <section id="works">
     <h2>My Works</h2>
-
-    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;" id="category-buttons">
-      <button data-filter="all">All Works</button>
-      <button data-filter="sketch">Sketches</button>
-      <button data-filter="digital">Digital Art</button>
-      <button data-filter="traditional">Traditional Arts</button>
-      <button data-filter="graphic">Graphic Design</button>
-      <button data-filter="film">Short Film</button>
-      <button data-filter="music">Music Videos</button>
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+      <a href="#all-works"><button>All Works</button></a>
+      <a href="#sketch"><button>Sketches</button></a>
+      <a href="#digital"><button>Digital Art</button></a>
+      <a href="#traditional"><button>Traditional Arts</button></a>
+      <a href="#graphic"><button>Graphic Design</button></a>
+      <a href="#film"><button>Short Film</button></a>
+      <a href="#music"><button>Music Videos</button></a>
     </div>
+  </section>
 
-    <div class="work-gallery" id="work-gallery">
+  <section id="all-works">
+    <h2>All Works</h2>
+    <div class="work-gallery">
       <img src="https://source.unsplash.com/200x150/?illustration" alt="Artwork 1" data-category="digital">
       <img src="https://source.unsplash.com/201x150/?drawing" alt="Artwork 2" data-category="sketch">
       <img src="https://source.unsplash.com/202x150/?painting" alt="Artwork 3" data-category="traditional">
@@ -301,8 +303,50 @@
     </div>
   </section>
 
+  <section id="sketch">
+    <h2>Sketches</h2>
+    <div class="work-gallery">
+      <img src="https://source.unsplash.com/201x150/?drawing" alt="Sketch">
+    </div>
+  </section>
+
+  <section id="digital">
+    <h2>Digital Art</h2>
+    <div class="work-gallery">
+      <img src="https://source.unsplash.com/200x150/?illustration" alt="Digital Art">
+    </div>
+  </section>
+
+  <section id="traditional">
+    <h2>Traditional Arts</h2>
+    <div class="work-gallery">
+      <img src="https://source.unsplash.com/202x150/?painting" alt="Traditional Art">
+    </div>
+  </section>
+
+  <section id="graphic">
+    <h2>Graphic Design</h2>
+    <div class="work-gallery">
+      <img src="https://source.unsplash.com/203x150/?anime" alt="Graphic Design">
+    </div>
+  </section>
+
+  <section id="film">
+    <h2>Short Film</h2>
+    <div class="work-gallery">
+      <img src="https://source.unsplash.com/204x150/?cinema" alt="Short Film">
+    </div>
+  </section>
+
+  <section id="music">
+    <h2>Music Videos</h2>
+    <div class="work-gallery">
+      <img src="https://source.unsplash.com/205x150/?music" alt="Music Video">
+    </div>
+  </section>
+
   <section id="resume">
-    <div class="resume-container">
+ <div class="resume-container">
       <h2>Resume</h2>
       <p class="resume-highlight">Explore my creative journey, skills, education, and professional experiences that have shaped my career in the arts.</p>
       <a href="Resume.pdf" target="_blank" class="resume-link">Download Resume</a>
@@ -310,7 +354,7 @@
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2>
+ <h2>Contact Me</h2>
     <form target="_blank" action="https://formsubmit.co/shinxbasya@gmail.com" method="POST">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email Address" required>
