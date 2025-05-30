@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIROYUKI DRAW</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
-    /* Global Styles */
     * {
       margin: 0;
       padding: 0;
@@ -17,29 +17,31 @@
     body, html {
       height: 100%;
       scroll-behavior: smooth;
+      background: #f2f2f2;
     }
 
     nav {
       position: fixed;
       width: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: linear-gradient(to right, #111, #333);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      animation: fadeInDown 1s ease forwards;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      animation: slideInDown 1s ease forwards;
     }
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
+    @keyframes slideInDown {
+      from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     nav h1 {
-      color: white;
-      font-size: 1.8rem;
-      font-family: 'Orbitron';
+      color: #ffcc00;
+      font-size: 2rem;
+      font-family: 'Orbitron', sans-serif;
     }
 
     nav ul {
@@ -52,16 +54,17 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.2s;
     }
 
     nav ul li a:hover {
       color: #ffcc00;
+      transform: scale(1.1);
     }
 
     section {
       min-height: 100vh;
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -84,94 +87,92 @@
     #home {
       background: url('COF.jpg') no-repeat center center/cover;
       color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
     }
 
     #about, #works, #resume, #contact {
-      background: #f8f9fa;
+      background: #fff;
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
-      color: #333;
+      color: #222;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       max-width: 700px;
       color: #555;
+      line-height: 1.6;
     }
 
     .work-gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .work-gallery img {
-      width: 200px;
-      height: 150px;
+      width: 220px;
+      height: 160px;
       object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s;
     }
 
     .work-gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.07);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    /* Updated Form Design */
     form {
-      background: white;
+      background: #fff;
       padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       max-width: 500px;
       width: 100%;
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
-      margin-top: 2rem;
     }
 
     input, textarea {
       width: 100%;
       padding: 1rem;
-      border: 2px solid #e0e0e0;
+      border: 2px solid #ddd;
       border-radius: 12px;
-      background-color: #f9f9f9;
-      transition: border-color 0.3s, background-color 0.3s;
-      font-size: 1rem;
+      background: #f9f9f9;
+      transition: 0.3s;
     }
 
     input:focus, textarea:focus {
-      border-color: #333;
+      border-color: #000;
       background-color: #fff;
       outline: none;
     }
 
-    textarea {
-      resize: vertical;
-      min-height: 150px;
-    }
-
     button {
       padding: 1rem;
-      background-color: #333;
-      color: white;
+      background: #000;
+      color: #fff;
       border: none;
       border-radius: 12px;
-      font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: 0.3s;
     }
 
     button:hover {
-      background-color: #555;
+      background: #444;
       transform: scale(1.05);
     }
 
@@ -215,7 +216,7 @@
     }
 
     .resume-container {
-      background: white;
+      background: #fff;
       padding: 2rem;
       border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -232,28 +233,28 @@
       display: inline-block;
       margin-top: 1.5rem;
       padding: 0.8rem 1.5rem;
-      background-color: #333;
-      color: white;
+      background: #000;
+      color: #fff;
       text-decoration: none;
       border-radius: 10px;
       font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: 0.3s;
     }
 
     .resume-link:hover {
-      background-color: #555;
+      background: #444;
       transform: scale(1.05);
     }
 
     .resume-highlight {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #444;
       line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <nav>
+    <nav>
     <h1>HIROYUKI DRAW</h1>
     <ul>
       <li><a href="#home">Home</a></li>
