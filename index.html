@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIROYUKI DRAW</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+ <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-   <style>
-      * {
+  <style>
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -412,69 +412,50 @@
         gap: 1rem;
       }
     }
-    
-    /* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  gap: 6px;
-  width: 30px;
-  height: 25px;
-  z-index: 1001;
-}
+   
+    .hamburger {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
 
-.hamburger span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      display: block;
+    }
 
-/* Mobile Nav */
-.mobile-nav {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: #111;
-  padding: 1rem 2rem;
-  z-index: 999;
-}
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: #333;
+      padding: 1rem;
+      border-radius: 8px;
+      flex-direction: column;
+    }
 
-.mobile-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.8rem 0;
-  display: block;
-}
+    .mobile-nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0.5rem 0;
+    }
 
-.mobile-nav a:hover {
-  color: #ffcc00;
-}
+    .mobile-nav.active {
+      display: flex;
+    }
 
-/* Responsive Behavior */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  nav ul {
-    display: none;
-  }
-
-  .mobile-nav.active {
-    display: flex;
-  }
-}
-
+    @media (min-width: 769px) {
+      .hamburger {
+        display: none;
+      }
+      .mobile-nav {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -482,8 +463,8 @@
   <nav>
     <h1>HIROYUKI DRAW</h1>
 
-    <!-- Hamburger Icon (Moved to top-right corner) -->
-    <div class="hamburger" onclick="toggleMobileNav()" style="position: absolute; right: 2rem; top: 1.2rem;">
+    <!-- Hamburger Icon (moved to top right) -->
+    <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
       <span></span>
@@ -610,9 +591,9 @@
     &copy; 2025 HIROYUKI DRAW. All rights reserved.
   </footer>
 
-
+  <!-- JavaScript to toggle menu and close on outside scroll -->
   <script>
-   const hamburger = document.getElementById('hamburger');
+    const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
 
     function toggleMobileNav() {
@@ -624,14 +605,12 @@
       toggleMobileNav();
     });
 
-    // Close mobile menu on outside click
     document.addEventListener('click', (e) => {
       if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
         mobileNav.classList.remove('active');
       }
     });
 
-    // Close mobile menu on scroll
     window.addEventListener('scroll', () => {
       mobileNav.classList.remove('active');
     });
