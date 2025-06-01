@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIROYUKI DRAW</title>
-   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+ <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -388,65 +388,37 @@
         height: 120px;
       }
     }
-  <style>
-    .hamburger {
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
 
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      display: block;
-    }
-
-    .mobile-nav {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background: #333;
-      padding: 1rem;
-      border-radius: 8px;
-      flex-direction: column;
-    }
-
-    .mobile-nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0.5rem 0;
-    }
-
-    .mobile-nav.active {
-      display: flex;
-    }
-
-    @media (min-width: 769px) {
-      .hamburger {
-        display: none;
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.8rem;
       }
-      .mobile-nav {
-        display: none !important;
+
+      nav ul {
+        gap: 0.8rem;
+      }
+
+      .resume-container, form {
+        padding: 1rem;
+      }
+
+      .skill-card {
+        font-size: 1rem;
+        height: 100px;
+      }
+
+      .social-links {
+        flex-direction: column;
+        gap: 1rem;
       }
     }
+   
   </style>
 </head>
 <body>
-
   <nav>
     <h1>HIROYUKI DRAW</h1>
 
-    <!-- Hamburger Icon (moved to top right) -->
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <!-- Desktop Navigation -->
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Me</a></li>
@@ -455,19 +427,9 @@
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#home">Home</a>
-      <a href="#about">About Me</a>
-      <a href="#about">Skills</a>
-      <a href="works.html">Works</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </div>
   </nav>
 
-   <section id="home"></section>
+  <section id="home"></section>
 
   <section id="about">
     <h2>About Me</h2><br><br>
@@ -567,29 +529,5 @@
     &copy; 2025 HIROYUKI DRAW. All rights reserved.
   </footer>
 
-  <!-- JavaScript to toggle menu and close on outside scroll -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-
-    function toggleMobileNav() {
-      mobileNav.classList.toggle('active');
-    }
-
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleMobileNav();
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
-        mobileNav.classList.remove('active');
-      }
-    });
-
-    window.addEventListener('scroll', () => {
-      mobileNav.classList.remove('active');
-    });
-  </script>
 </body>
 </html>
