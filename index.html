@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
-    * {
+  * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -412,19 +412,90 @@
         gap: 1rem;
       }
     }
+    
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      transition: 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 999;
+      padding: 1rem 2rem;
+    }
+
+    .mobile-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.7rem 0;
+      display: block;
+    }
+
+    .mobile-nav a:hover {
+      color: #ffcc00;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
   <nav>
     <h1>HIROYUKI DRAW</h1>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMobileNav()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Desktop Navigation -->
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About Me</a></li>
-       <li><a href="#about">Skills</a></li>
+      <li><a href="#about">Skills</a></li>
       <li><a href="works.html">Works</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#home">Home</a>
+      <a href="#about">About Me</a>
+      <a href="#about">Skills</a>
+      <a href="works.html">Works</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <section id="home"></section>
@@ -524,5 +595,13 @@
   <footer>
     &copy; 2025 Hiroyuki Draw. All rights reserved.
   </footer>
+
+  <!-- JavaScript for toggling mobile nav -->
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
