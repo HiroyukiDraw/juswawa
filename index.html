@@ -586,9 +586,9 @@
       <button type="submit">Send Message</button>
     </form>
     <div class="social-links">
-      <a href="https://facebook.com" target="_blank">Facebook</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-      <a href="https://tiktok.com" target="_blank">TikTok</a>
+      <a href="https://www.facebook.com/juswawawa069" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/jusmac_88?igsh=eHI0cXB0cmlza3Zz" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@shesssshh8?_t=ZS-8wqSnKbQr45&_r=1" target="_blank">TikTok</a>
     </div>
   </section>
 
@@ -598,9 +598,19 @@
 
   <!-- JavaScript for toggling mobile nav -->
   <script>
-    function toggleMobileNav() {
-      const nav = document.getElementById('mobileNav');
-      nav.classList.toggle('active');
+    const mobileNav = document.getElementById('mobileNav');
+  const hamburger = document.querySelector('.hamburger');
+
+  function toggleMobileNav() {
+    mobileNav.classList.toggle('active');
+  }
+
+  // Close the mobile nav if scrolling outside
+  window.addEventListener('scroll', () => {
+    if (mobileNav.classList.contains('active')) {
+      mobileNav.classList.remove('active');
+    }
+  });
     }
   </script>
 </body>
