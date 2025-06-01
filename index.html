@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+ <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HIROYUKI DRAW</title>
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <style>
+   <style>
       * {
       margin: 0;
       padding: 0;
@@ -482,8 +482,8 @@
   <nav>
     <h1>HIROYUKI DRAW</h1>
 
-    <!-- Hamburger Icon -->
-    <div class="hamburger" onclick="toggleMobileNav()">
+    <!-- Hamburger Icon (Moved to top-right corner) -->
+    <div class="hamburger" onclick="toggleMobileNav()" style="position: absolute; right: 2rem; top: 1.2rem;">
       <span></span>
       <span></span>
       <span></span>
@@ -510,7 +510,7 @@
     </div>
   </nav>
 
-  <section id="home"></section>
+ <section id="home"></section>
 
   <section id="about">
     <h2>About Me</h2><br><br>
@@ -610,11 +610,21 @@
     &copy; 2025 HIROYUKI DRAW. All rights reserved.
   </footer>
 
+
   <script>
     function toggleMobileNav() {
-      document.getElementById("mobileNav").classList.toggle("active");
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('active');
     }
-  </script>
 
+    // Close mobile nav if user clicks outside
+    document.addEventListener('click', function(event) {
+      const nav = document.getElementById('mobileNav');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
+        nav.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
