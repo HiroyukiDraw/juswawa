@@ -231,11 +231,12 @@
     }
 
     .skills-container {
+      width: 100%;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
+      flex-direction: column;
+      align-items: center;
       margin-top: 3rem;
+      gap: 2rem;
     }
 
     .skill-card {
@@ -273,13 +274,50 @@
       align-items: center;
       text-align: center;
       font-size: 0.95rem;
-      overflow: auto;
-      word-wrap: break-word;
     }
 
     .skill-card:hover .skill-info {
       bottom: 0;
     }
+
+    .technical-skills {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .skill-bar {
+      margin-bottom: 1.2rem;
+    }
+
+    .skill-bar label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.4rem;
+      color: #333;
+    }
+
+    .progress {
+      width: 100%;
+      background: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      text-align: right;
+      padding-right: 0.5rem;
+      color: white;
+      font-weight: bold;
+      line-height: 20px;
+      border-radius: 10px;
+    }
+
+    .bar-draw { width: 85%; background: #000; }
+    .bar-photo { width: 65%; background: #000; }
+    .bar-edit { width: 80%; background: #000; }
+    .bar-graphic { width: 75%; background: #000; }
   </style>
 </head>
 <body>
@@ -307,21 +345,38 @@
     <p>I'm Hiroyuki, a passionate artist who brings imagination to life through sketches, digital illustrations, and unique concepts. Art is my voice, and every stroke tells a story.</p>
 
     <div class="skills-container">
-      <div class="skill-card">
-        Drawing
-        <div class="skill-info">Clean lines. Sharp form. Traditional & modern styles.</div>
+      <div>
+        <h3 style="margin-bottom: 1rem; color: #000;">Soft Skills</h3>
+        <div class="skills-container" style="flex-direction: row; flex-wrap: wrap; gap: 1rem;">
+          <div class="skill-card">Communication<div class="skill-info">Clear, confident, client-friendly</div></div>
+          <div class="skill-card">Creativity<div class="skill-info">Innovative and bold thinker</div></div>
+          <div class="skill-card">Teamwork<div class="skill-info">Collaborative and open</div></div>
+          <div class="skill-card">Time Management<div class="skill-info">Efficient and deadline-driven</div></div>
+        </div>
       </div>
-      <div class="skill-card">
-        Digital Art
-        <div class="skill-info">Stylus wizard. From sketch to splash color in seconds.</div>
-      </div>
-      <div class="skill-card">
-        Illustration
-        <div class="skill-info">Storytelling with style. Characters that live & breathe.</div>
-      </div>
-      <div class="skill-card">
-        Graphic Design
-        <div class="skill-info">Logos. Posters. Layouts that pop & speak.</div>
+
+      <div class="technical-skills">
+        <h3 style="margin-top: 3rem; margin-bottom: 1rem; color: #000;">Technical Skills</h3>
+
+        <div class="skill-bar">
+          <label>Drawing</label>
+          <div class="progress"><div class="progress-bar bar-draw">85%</div></div>
+        </div>
+
+        <div class="skill-bar">
+          <label>Photography</label>
+          <div class="progress"><div class="progress-bar bar-photo">65%</div></div>
+        </div>
+
+        <div class="skill-bar">
+          <label>Photo Editing</label>
+          <div class="progress"><div class="progress-bar bar-edit">80%</div></div>
+        </div>
+
+        <div class="skill-bar">
+          <label>Graphic Design</label>
+          <div class="progress"><div class="progress-bar bar-graphic">75%</div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -343,24 +398,5 @@
       <button type="submit">Submit Form</button>
     </form>
   </section>
-
-  <script>
-    const buttons = document.querySelectorAll('#category-buttons button');
-    const images = document.querySelectorAll('#work-gallery img');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        images.forEach(img => {
-          const category = img.getAttribute('data-category');
-          if (filter === 'all' || category === filter) {
-            img.style.display = 'block';
-          } else {
-            img.style.display = 'none';
-          }
-        });
-      });
-    });
-  </script>
 </body>
 </html>
