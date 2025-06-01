@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -230,6 +229,55 @@
       color: #444;
       line-height: 1.6;
     }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .skill-card {
+      position: relative;
+      width: 200px;
+      height: 120px;
+      background: #000;
+      color: #fff;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+    }
+
+    .skill-info {
+      position: absolute;
+      bottom: -100%;
+      background: rgba(255, 255, 255, 0.95);
+      color: #000;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      transition: bottom 0.4s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+
+    .skill-card:hover .skill-info {
+      bottom: 0;
+    }
   </style>
 </head>
 <body>
@@ -255,6 +303,25 @@
       <img src="smile.jpg" alt="Profile Picture" class="profile-image">
     </div><br><br>
     <p>I'm Hiroyuki, a passionate artist who brings imagination to life through sketches, digital illustrations, and unique concepts. Art is my voice, and every stroke tells a story.</p>
+
+    <div class="skills-container">
+      <div class="skill-card">
+        Drawing
+        <div class="skill-info">Proficient in traditional sketching, shading, and anatomical structure.</div>
+      </div>
+      <div class="skill-card">
+        Digital Art
+        <div class="skill-info">Experienced in Photoshop, Procreate, and digital tablet workflows.</div>
+      </div>
+      <div class="skill-card">
+        Illustration
+        <div class="skill-info">Strong understanding of concept art, color theory, and character design.</div>
+      </div>
+      <div class="skill-card">
+        Graphic Design
+        <div class="skill-info">Skilled in branding, layout design, and Adobe Illustrator/Photoshop.</div>
+      </div>
+    </div>
   </section>
 
   <section id="resume">
